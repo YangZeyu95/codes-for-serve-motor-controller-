@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>LQ_K60DN_demo/Release</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>114</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>958</ColumnWidth1><ColumnWidth2>255</ColumnWidth2><ColumnWidth3>63</ColumnWidth3></Build>
+    <TerminalIO/><Debug-Log><ColumnWidth0>21</ColumnWidth0><ColumnWidth1>1810</ColumnWidth1></Debug-Log><Disassembly><col-names><item>Disassembly</item><item>_I0</item></col-names><col-widths><item>500</item><item>20</item></col-widths><DisasmHistory/><ShowCodeCoverage>0</ShowCodeCoverage><ShowInstrProfiling>176</ShowInstrProfiling></Disassembly></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-4025-18057</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>LQ_K60DN_demo</ExpandedNode><ExpandedNode>LQ_K60DN_demo/Driver</ExpandedNode><ExpandedNode>LQ_K60DN_demo/Driver/PIT</ExpandedNode><ExpandedNode>LQ_K60DN_demo/Driver/UART</ExpandedNode><ExpandedNode>LQ_K60DN_demo/User</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-31858-18354</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-31111-26742</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Includes\PIT.h</Filename><XPos>0</XPos><YPos>9</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\User\LQ12864.c</Filename><XPos>0</XPos><YPos>553</YPos><SelStart>29910</SelStart><SelEnd>29974</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Source\Lptmr.c</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>7650</SelStart><SelEnd>7650</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Includes\UART.h</Filename><XPos>0</XPos><YPos>57</YPos><SelStart>961</SelStart><SelEnd>961</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Source\DAC.c</Filename><XPos>0</XPos><YPos>31</YPos><SelStart>2260</SelStart><SelEnd>2260</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Includes\DAC.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>546</SelStart><SelEnd>546</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>Z:\&#x6BD5;&#x4e1A;&#x8BBe;&#x8BA1;\VG&#x7248; &#x5e26;Z  K60DN512ZVLQ10&#x6838;&#x5FC3;&#x677F;\2.&#x53D1;&#x8D27;&#x524D;&#x6D4B;&#x8BD5;&#x7A0B;&#x5e8F;\LQ_K60DN_demo\src\libs\MK60N512VMD100.h</Filename><XPos>0</XPos><YPos>747</YPos><SelStart>12775</SelStart><SelEnd>12775</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Source\UART.c</Filename><XPos>0</XPos><YPos>453</YPos><SelStart>14769</SelStart><SelEnd>14769</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\User\include.h</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>606</SelStart><SelEnd>606</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Source\PLL.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Source\DMA.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Source\vectors.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Source\GPIO.c</Filename><XPos>0</XPos><YPos>129</YPos><SelStart>6035</SelStart><SelEnd>6035</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Libs\MK60N512VMD100.h</Filename><XPos>0</XPos><YPos>5124</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\User\main.c</Filename><XPos>0</XPos><YPos>24</YPos><SelStart>3261</SelStart><SelEnd>3261</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\Source\PIT.c</Filename><XPos>0</XPos><YPos>168</YPos><SelStart>4945</SelStart><SelEnd>4945</SelEnd></Tab><ActiveTab>15</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0137a140><key>iaridepm.enu1</key></Toolbar-0137a140></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>670</Bottom><Right>188</Right><x>-2</x><y>-2</y><xscreen>14</xscreen><yscreen>17</yscreen><sizeHorzCX>9722</sizeHorzCX><sizeHorzCY>20631</sizeHorzCY><sizeVertCX>131944</sizeVertCX><sizeVertCY>815534</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>109</Bottom><Right>1442</Right><x>-2</x><y>-2</y><xscreen>1444</xscreen><yscreen>111</yscreen><sizeHorzCX>1002778</sizeHorzCX><sizeHorzCY>134709</sizeHorzCY><sizeVertCX>9722</sizeVertCX><sizeVertCY>20631</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+
