@@ -104,7 +104,7 @@ void main(void)
    
   while(1)
   {
-    UART_Query_Str (UART1, a, 3);
+    UART_Query_Str (UART1, a, 6);
     if(a[0] != 0x00)
     {
     for (int i = 0;i < 8; i++)
@@ -145,14 +145,21 @@ void main(void)
        Threshold = Contral[1];
        //UART_Put_Char (UART1, Threshold);
 
-       break;     
+       break;  
+       case 0x0d:
+       //if(Contral[1] == 0x0a)
+       //{
+         InPut = Contral[2] + Contral[3] + Contral[4]  + Contral[5];
+       //}
+
+       break; 
      default:
        break;
 
     }
     }
     
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < 8; i++)
     {
       Contral[i] = 0;
     }
