@@ -95,7 +95,7 @@ void main(void)
    //DAC_Out(DAC_0, Result);
    PIT_Init(PIT0,1);
    UART_Init(UART1,115200);
-
+   UART_Irq_En(UART1);
 
    PIT_Init(PIT1,5);   
 
@@ -104,7 +104,7 @@ void main(void)
    
   while(1)
   {
-    UART_Query_Str (UART1, a, 6);
+   /* UART_Query_Str (UART1, a, 6);
     if(a[0] != 0x00)
     {
     for (int i = 0;i < 8; i++)
@@ -163,7 +163,7 @@ void main(void)
     {
       Contral[i] = 0;
     }
-
+*/
       
    /* for(int i = 0; i < 26; i++)
     {

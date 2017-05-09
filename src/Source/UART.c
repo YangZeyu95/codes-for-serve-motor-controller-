@@ -12,6 +12,8 @@
 
 #include "include.h"
 #include "UART.h"
+extern char a[8], State;//斜坡信号发生器状态 0关闭 1启动
+extern int InPut, Kp, Ki1, Kd, Threshold;
 
 
 UART_MemMapPtr UARTN[UART_MAX] = {UART0_BASE_PTR, UART1_BASE_PTR, UART2_BASE_PTR, UART3_BASE_PTR, UART4_BASE_PTR, UART5_BASE_PTR}; 
@@ -463,22 +465,58 @@ void UART_Irq_Dis(UARTn_e uratn)
 void UART0_IRQHandler(void)
 {
     s8 data[20];
-
+    
     //接收一个字节数据并回发
        
-    sprintf(data,"你发送的数据为：%c\n",UART_Get_Char (UART0));
+    //sprintf(data,"你发送的数据为：%c\n",UART_Get_Char (UART0));
     
-    UART_Put_Str(UART0,data);      //就发送出去
+    //UART_Put_Str(UART0,data);      //就发送出去
 }
 void UART1_IRQHandler(void)
 {
+    UART_Irq_Dis(UART1);  
     s8 data[20];
-
-    //接收一个字节数据并回发
-       
-    sprintf(data,"你发送的数据为：%c\n",UART_Get_Char (UART1));
+    for(int i = 0; i < 6; i++)
+    {
+      data[i] = UART_Get_Char (UART1);
+    }
+    switch(data[0])
+    {
+      case '1':
+         State = 0;
+        break;
+      case '2':
+      State = 1;
+      break;
+      case '3':
+          State = 0;    
+          InPut = (data[1] - 0x30) * 1000 + (data[2] - 0x30) *100 + (data[3] - 0x30) * 10 + (data[4] - 0x30);
+        break;
+      case 'P':
+        Kp = (data[1] - 0x30) * 100 + (data[2] - 0x30) * 10 + data[3] - 0x30;
+        break;
+      case 'I':
+         Ki1 = (data[1] - 0x30) * 100 + (data[2] - 0x30) * 10 + data[3] - 0x30;
+         break;
+      case 'D':
+         Kd = (data[1] - 0x30) * 100 + (data[2] - 0x30) * 10 + data[3] - 0x30;
+         break;
+      case 'T':
+         Threshold = (data[1] - 0x30) * 100 + (data[2] - 0x30) * 10 + data[3] - 0x30;
+         break; 
+      case 0x0d:
+        if(data[1] == 0x0a)
+        {
+           InPut = (data[2] - 0x30) * 1000 + (data[3] - 0x30) *100 + (data[4] - 0x30) * 10 + (data[5] - 0x30);
+        }
+        break;
+    }
+        for(int i = 0; i < 6; i++)
+        {
+          data[i] = 0;
+        }
+        UART_Irq_En(UART1);
     
-    UART_Put_Str(UART1,data);      //就发送出去
 }
 void UART2_IRQHandler(void)
 {
