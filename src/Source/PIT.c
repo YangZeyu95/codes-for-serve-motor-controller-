@@ -15,9 +15,9 @@
 #include "math.h"
 extern char State;
 int Gray[26];
-int Kp = 60, Ki1 = 100, Kd = 40,Ki = 0, Threshold = 20;   //PID系数
+int Kp = 60, Ki1 = 100, Kd = 40,Ki = 0, Threshold = 40;   //PID系数
 int Data = 0, b = 0, c = 0, CountOfState = 0, InPut = 5000, Position = 0, IntT = 0;
-signed int Error = 0, LastError = 0, OutPut = 0, Differential = 0, Dir = 1;
+signed long Error = 0, LastError = 0, OutPut = 0, Differential = 0, Dir = 1;
 uint16 Result = 0,Voltage = 0;
 double  Integration = 0;
 unsigned char DataToSend;
@@ -74,7 +74,7 @@ void PIT0_Interrupt()
   CountOfState++;
   
 
-  if(CountOfState > 1) 
+  if(CountOfState > 20) 
   {
     CountOfState = 0;
   }
@@ -116,7 +116,7 @@ void PIT0_Interrupt()
     {
       if(Integration <= 100 && Integration >= -100)
       {
-        Integration = Integration + Error * 0.005;  
+        Integration = Integration + Error * 0.02;  
       }
       else if(Integration > 100) Integration = 100;
       else if(Integration < -100) Integration =-100;
@@ -129,7 +129,7 @@ void PIT0_Interrupt()
 
     break;
   case 1:
-    Differential = (Error - LastError) / 0.005;
+    Differential = (Error - LastError);
     LastError = Error;
     //if(Error < 10) Differential = 0;
     
@@ -144,6 +144,12 @@ void PIT0_Interrupt()
     GPIO_Reverse(PORTD, 7);
 
     break;
+  case 2:
+    UART_Put_Char (UART1, 0x50);
+    break;
+  default:
+    break;
+    
   }
 }
 

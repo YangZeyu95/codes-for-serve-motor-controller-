@@ -480,36 +480,44 @@ void UART1_IRQHandler(void)
     {
       data[i] = UART_Get_Char (UART1);
     }
-    switch(data[0])
+    if(data[0] == 0x0d)
     {
-      case '1':
-         State = 0;
+      switch(data[1])
+      {
+        case '1':
+          State = 0;
+          break;
+       case '2':
+        State = 1;
         break;
-      case '2':
-      State = 1;
-      break;
-      case '3':
-          State = 0;    
-          InPut = (data[1] - 0x30) * 1000 + (data[2] - 0x30) *100 + (data[3] - 0x30) * 10 + (data[4] - 0x30);
-        break;
-      case 'P':
-        Kp = (data[1] - 0x30) * 100 + (data[2] - 0x30) * 10 + data[3] - 0x30;
-        break;
-      case 'I':
-         Ki1 = (data[1] - 0x30) * 100 + (data[2] - 0x30) * 10 + data[3] - 0x30;
-         break;
-      case 'D':
-         Kd = (data[1] - 0x30) * 100 + (data[2] - 0x30) * 10 + data[3] - 0x30;
-         break;
-      case 'T':
-         Threshold = (data[1] - 0x30) * 100 + (data[2] - 0x30) * 10 + data[3] - 0x30;
-         break; 
-      case 0x0d:
-        if(data[1] == 0x0a)
-        {
+       case '3':
+           State = 0;    
            InPut = (data[2] - 0x30) * 1000 + (data[3] - 0x30) *100 + (data[4] - 0x30) * 10 + (data[5] - 0x30);
-        }
-        break;
+         break;
+        case 'P':
+          Kp = (data[2] - 0x30) * 1000 + (data[3] - 0x30) *100 + (data[4] - 0x30) * 10 + (data[5] - 0x30);
+          break;
+        case 'I':
+           Ki1 = (data[2] - 0x30) * 1000 + (data[3] - 0x30) *100 + (data[4] - 0x30) * 10 + (data[5] - 0x30);
+           break;
+        case 'D':
+          Kd = (data[2] - 0x30) * 1000 + (data[3] - 0x30) *100 + (data[4] - 0x30) * 10 + (data[5] - 0x30);
+          break;
+       case 'T':
+          Threshold = (data[2] - 0x30) * 1000 + (data[3] - 0x30) *100 + (data[4] - 0x30) * 10 + (data[5] - 0x30);
+          break; 
+       case 0x0a:
+          InPut = (data[2] - 0x30) * 1000 + (data[3] - 0x30) *100 + (data[4] - 0x30) * 10 + (data[5] - 0x30);
+          if(InPut > 7000)
+          {
+            InPut = 7000;
+          }
+          if(InPut < 2000)
+          {
+            InPut = 2000;
+          }
+          break;
+      }
     }
         for(int i = 0; i < 6; i++)
         {
